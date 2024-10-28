@@ -24,14 +24,13 @@ Task Management App Project Documentation
         Bootstrap: CSS framework for responsive design (Optional).
     2.2 Backend:
         Python: The primary programming language.
-        Flask/Django: Web frameworks for building RESTful APIs and handling backend logic.
-        SQLAlchemy/Django ORM: Object Relational Mapper to interact with the database.
-        SQLite/PostgreSQL/MySQL: For database management and storing user tasks and credentials.
+        Django: Web frameworks for building RESTful APIs and handling backend logic.
+        Django ORM: Object Relational Mapper to interact with the database.
+        MySQL: For database management and storing user tasks and credentials.
     2.3 APIs (Optional):
         SendGrid: For email notifications (optional for sending reminders).
         Google Calendar API: To integrate tasks with Google Calendar (optional).
     2.4 Deployment:
-        Heroku/AWS/DigitalOcean: For hosting the application.
         GitHub: Version control and project collaboration.
 
 
