@@ -1,0 +1,101 @@
+Task Management App Project Documentation
+1. Project Overview
+
+    1.1 Project Name:
+        Task Management App
+
+    1.2 Description:
+        The Task Management App is a web-based application where users can create, update, delete, and manage tasks in an organized way.
+        Each user will have their own account and can categorize tasks based on their status (To-Do, In Progress, Completed). 
+        This app will include features like task prioritization, due dates, and task filtering.
+
+    1.3 Goals:
+        To build a full-stack web application using Python and web technologies.
+        To practice and gain experience in front-end and back-end development.
+        To implement user authentication and authorization.
+        To deploy a web app using cloud services.
+
+
+2. Technology Stack
+    2.1 Frontend:
+        HTML5: Structure of the webpages.
+        CSS3: Styling and layout of the user interface.
+        JavaScript: Client-side scripting and interactivity (AJAX for dynamic updates).
+        Bootstrap: CSS framework for responsive design (Optional).
+    2.2 Backend:
+        Python: The primary programming language.
+        Flask/Django: Web frameworks for building RESTful APIs and handling backend logic.
+        SQLAlchemy/Django ORM: Object Relational Mapper to interact with the database.
+        SQLite/PostgreSQL/MySQL: For database management and storing user tasks and credentials.
+    2.3 APIs (Optional):
+        SendGrid: For email notifications (optional for sending reminders).
+        Google Calendar API: To integrate tasks with Google Calendar (optional).
+    2.4 Deployment:
+        Heroku/AWS/DigitalOcean: For hosting the application.
+        GitHub: Version control and project collaboration.
+
+
+3. Functional Requirements
+    3.1 User Authentication:
+        Users can create an account and log in.
+        Passwords will be securely hashed (using libraries like bcrypt or werkzeug.security).
+        Users can reset their passwords if needed.
+    3.2 Task Management (CRUD):
+        Create Task: Users can create tasks with details such as name, description, due date, priority, and status.
+        Read Tasks: Users can view all their tasks with filters (by date, status, or priority).
+        Update Task: Users can edit task details (e.g., change status from “To-Do” to “In Progress”).
+        Delete Task: Users can remove tasks from their list.
+    3.3 Task Filtering:
+        Users can filter tasks based on their current status (To-Do, In Progress, Completed).
+        Filter tasks by priority and due date.
+    3.4 Responsive Design:
+        The app will be accessible and user-friendly on all devices (mobile, tablet, desktop).
+
+
+4. Non-Functional Requirements
+    4.1 Security:
+        Secure user data with hashed passwords.
+        Use HTTPS for secure communication between client and server.
+    4.2 Performance:
+        The app should handle multiple users and task management actions efficiently.
+        Optimize database queries to improve speed and performance.
+    4.3 Usability:
+        The interface will be intuitive and easy to navigate.
+        User flows will be clear, enabling users to create and manage tasks without friction.
+
+
+5. System Architecture
+    5.1 High-Level Architecture Diagram:
+        Frontend: HTML, CSS, JavaScript (AJAX) to build the user interface.
+        Backend: Python with Flask/Django to handle logic and interact with the database.
+        Database: SQLite/PostgreSQL/MySQL to store user credentials and tasks.
+        Deployment: Hosted on Heroku or AWS with version control on GitHub.
+        Insert diagram here once created
+
+6. Database Design
+    6.1 User Table:
+        Columns:
+        id: Integer (Primary Key)
+        username: String (Unique)
+        email: String (Unique)
+        password_hash: String (Hashed password)
+    6.2 Task Table:
+        Columns:
+        id: Integer (Primary Key)
+        user_id: Foreign Key (references User Table)
+        task_name: String
+        description: Text
+        due_date: DateTime
+        priority: Integer (e.g., 1 = High, 2 = Medium, 3 = Low)
+        status: String (e.g., To-Do, In Progress, Completed)
+
+7. API Endpoints
+    7.1 Authentication:
+    POST /register: To register a new user.
+    POST /login: To log in and create a session.
+
+7.2 Task Management:
+    GET /tasks: Retrieve all tasks for the authenticated user.
+    POST /tasks: Create a new task.
+    PUT /tasks/<task_id>: Update an existing task.
+    DELETE /tasks/<task_id>: Delete a task.
